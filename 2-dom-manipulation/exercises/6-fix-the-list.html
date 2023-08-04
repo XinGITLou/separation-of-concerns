@@ -44,9 +44,46 @@
         <script id="dom-manipulation-script">
           'use strict';
           debugger;
+          const actualDiv = document.querySelector("#actual");
+          actualDiv.innerHTML='';
+          const header = document.createElement('h1');
+          header.innerHTML = 'a list of things'
+          actualDiv.append(header);
+          
 
-          // write me! (... without using cloneNode, that's kind of cheating)
-        </script>
+          const unorderList = document.createElement('ul');
+          const list1 = document.createElement('li');
+          list1.innerText= 'robots';
+          const list2 = document.createElement('li');
+          list2.innerText='solar systems';
+          const list3 = document.createElement('li');
+          list3.innerText= 'oil';
+          unorderList.append(list1,list2,list3);
+
+          
+          actualDiv.append(unorderList);
+          // write me! (... without using cloneNode, that's kind of cheating
+          // Method 2 
+        //   const header = document.createElement('h1');
+        //   header.innerHTML = expectedDiv.querySelector('h1').innerHTML;
+        //   actualDiv.appendChild(header);
+
+  
+        //   const unorderList = document.createElement('ul');
+        //   const expectedListItems = expectedDiv.querySelectorAll('ul li');
+
+  
+        //   expectedListItems.forEach(item => {
+        //   const listItem = document.createElement('li');
+        //   listItem.innerHTML = item.innerHTML;
+        //   unorderList.appendChild(listItem);
+        //   });
+
+        //  actualDiv.innerHTML = '';
+        //  actualDiv.appendChild(unorderList);
+</script>
+This script will correctly modify the "actual" <div> to match the content of the "expected" <div>. The "actual" <div> will have an <h1> and an <ul> containing the same list items as in the "expected" <div>.
+
       </div>
 
       <div id="mocha" class="mocha-output"></div>
